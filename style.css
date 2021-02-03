@@ -1,0 +1,61 @@
+*, *: :before, *: :after {
+   box-sizing: border-box;
+   font-family: Calibri; 
+   font-weight: normal;
+}
+
+body {
+   padding: 8;
+   margin: 0;
+   background:linear-gradient(to right, pink, #89cff0);
+
+}
+/*this line of code is to make the calculator in the center of the page*/
+.calculator-grid {
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   min-height: 100vh;
+   grid-template-columns: repeat(4, 100px);
+   grid-template-rows: minmax(120px, auto)repeat(5, 100px);
+}
+/* this line of code is to change the color of the buttons */
+.calculator-grid> button {
+   cursor: pointer;
+   font-size: 2rem;
+   border: 1px solid white;
+   outline: none;
+   background-color: rgba(255, 255, 255, .75);
+}
+/*this line of code is so that when you touch the buttons with the cursor it changes cololor*/
+.calculator-grid > button:hover {
+   background-color: rgba(255, 255, 255, .9);
+}
+/* this is so that the AC and = button take up 2 spaces*/
+.span-two{
+  grid-column: span 2; 
+}
+/* this is so that our outputs fill up the entire space of the calculator */
+.output {
+   grid-column: 1/ -1;
+   background-color: rgba(0, 0 , 0, .75);
+   /* this made the output screen go black */
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-around; 
+   flex-direction: column; /* makes it so that the numbers go up to down */
+   padding: 10px /* this makes it so the numbers aren't pushed all the way to the top of the container */
+   word-wrap: break-word; /*makes it so that the we can break the word in the middle and not just the end */
+   word-break: break-all; /* makes it so that we can break all words if the numbers became to long */
+}
+/* this made is so that the first input changes to a white ish color and the size is a bit bigger */
+.output .previous-operand {
+   color: rgba(255, 255, 255, .75);
+   font-size: 1.5rem;
+}
+/* this is changing the second outputs color and size by calling the output class and referencing current operand */
+.output .current-operand {
+   color:white;
+   font-size: 2.5rem;
+}
+
