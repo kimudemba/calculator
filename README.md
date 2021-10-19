@@ -1,2 +1,2 @@
-# calculator
-Just a simple calculator
+# Cute Calculator
+A calculator for when you need help with math homework.
